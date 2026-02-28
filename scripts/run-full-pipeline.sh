@@ -1,4 +1,5 @@
 #!/bin/bash
+# DISCLAIMER: Financial data hardcoded in this script is illustrative only (as of Feb 2026). Update with current data before use. Not investment advice.
 # =============================================================================
 # run-full-pipeline.sh — Ejecuta el pipeline completo de equity research
 #

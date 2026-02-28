@@ -1,7 +1,7 @@
 {
   "name": "finance",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automated sell-side equity research pipeline powered by Claude Code",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -9,9 +9,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["equity-research", "financial-analysis", "valuation", "dcf", "comparable-companies"],
+  "author": "Walter102202",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Walter102202/Finance.git"
+  },
+  "homepage": "https://github.com/Walter102202/Finance",
   "dependencies": {
     "docx": "^9.6.0"
   }
