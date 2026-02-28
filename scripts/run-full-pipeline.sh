@@ -146,10 +146,11 @@ fi
 # =============================================================================
 OUT="coverage/$TICKER/05-initiation-report/initiation-$TICKER-$DATE.docx"
 if ! should_skip "$OUT"; then
-  log "Paso 5/8: Generando Initiation Report..."
+  log "Paso 5/8: Generando Initiation Report y HTML Summary..."
   step_start
   node scripts/generate-initiation.js "$TICKER"
-  step_end "Initiation Report → $OUT"
+  node scripts/generate-html-summary.js "$TICKER"
+  step_end "Initiation Report + HTML → $OUT"
 fi
 
 # =============================================================================
