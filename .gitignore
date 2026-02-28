@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Claude Code local settings (permissions, session data)
+.claude/settings.local.json
+.claude/projects/
+.claude/todos/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
