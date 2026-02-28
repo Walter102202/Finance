@@ -6,8 +6,8 @@ const {
   BorderStyle, WidthType, ShadingType, PageNumber, PageBreak
 } = require("docx");
 
-const TICKER = process.argv[2] || "MELI";
-const NOTE_DATE = process.argv[3] || "2026-02-27";
+const TICKER = process.argv[2] || "UBER";
+const NOTE_DATE = process.argv[3] || "2026-02-28";
 
 const border = { style: BorderStyle.SINGLE, size: 1, color: "999999" };
 const borders = { top: border, bottom: border, left: border, right: border };
@@ -55,7 +55,7 @@ const doc = new Document({
             hc("Ticker",1680), hc("Rating",1680), hc("Target",1680), hc("Price",1680), hc("Upside",1680), hc("Action",1680)
           ]}),
           new TableRow({children:[
-            dcb("MELI",1680), dcb("BUY",1680,greenS), dc("$2,220",1680), dc("$1,794",1680), dcb("+23.7%",1680,greenS), dcb("ACCUMULATE",1680,{fill:"E3F2FD",type:ShadingType.CLEAR})
+            dcb("UBER",1680), dcb("BUY",1680,greenS), dc("$109",1680), dc("$74.80",1680), dcb("+45.7%",1680,greenS), dcb("ACCUMULATE",1680,{fill:"E3F2FD",type:ShadingType.CLEAR})
           ]}),
         ]
       }),
@@ -70,21 +70,22 @@ const doc = new Document({
         rows:[
           new TableRow({children:[hc("1-Day",2016), hc("1-Week",2016), hc("1-Month",2016), hc("YTD",2016), hc("Volume",2016)]}),
           new TableRow({children:[
-            dcb("+2.8%",2016,greenS), dcb("-6.7%",2016,redS), dcb("-4.5%",2016,redS), dcb("-3.8%",2016,redS), dc("~1.5x avg",2016)
+            dcb("+0.5%",2016,greenS), dcb("-6.4%",2016,redS), dcb("-8.2%",2016,redS), dcb("+3.1%",2016,greenS), dc("~1.2x avg",2016)
           ]}),
         ]
       }),
 
       p(""),
-      p("MELI bounced +2.8% on Feb 26, recovering a portion of the -9.25% post-earnings selloff from the prior session. Volume was ~1.5x the 20-day average, normalizing from 3.5x on the selloff day. The partial recovery was led by value-oriented buyers stepping in at ~25x 2026E EPS. Pre-market futures indicate a flat open today."),
+      p("UBER traded roughly flat on Feb 27, consolidating after the post-earnings selloff. The stock is down -6.4% over the past week following Q4 2025 results (reported Feb 4), with the selloff driven by Q1 2026 EBITDA guidance of $2.37-2.47B below Street expectations of ~$2.55B. Volume has normalized to ~1.2x the 20-day average after spiking 2.5x on the earnings reaction day."),
 
       // NEWS / EVENTS
       h2("News & Events (Last 24 Hours)"),
-      b("Post-earnings analyst notes: Morgan Stanley reiterated OW ($2,950 PT), citing credit quality inflection; Goldman maintained Buy ($2,600 PT) noting Mexico acceleration"),
-      b("Nubank (NU) reported Q4 2025 yesterday (Feb 26 AMC): Revenue +36% YoY, ROE 29% — read-across positive for MELI's fintech thesis"),
-      b("Brazil real strengthened +0.6% vs USD to R$5.72, supportive for MELI's BRL-denominated revenue"),
-      b("Mexico nearshoring data: January industrial production +4.2% YoY, above consensus, positive for MELI Mexico commerce"),
-      b("Sea Limited (SE) Q4 results due Mar 4 — key read-across for Shopee Brazil competitive dynamics"),
+      b("Post-earnings analyst updates: Goldman Sachs maintained Buy ($125 PT), BofA maintained Buy ($103 PT), Guggenheim Buy ($125 PT) - all citing operational strength despite margin softness"),
+      b("Waymo announced expansion plans for San Francisco ride-hailing service on Uber's platform, expected H2 2026 - positive for AV Platform thesis pillar"),
+      b("New CFO Balaji Krishnamurthy officially started Feb 16; first public comments expected at upcoming investor conferences"),
+      b("Lyft (LYFT) Q4 2025 results (reported Feb 12): Record revenue, DashPass partnership gaining traction - competitive dynamics stable"),
+      b("DoorDash (DASH) Q4 2025 results (reported Feb 13): Revenue +38% YoY, Wolt EU expanding well - delivery competitive pressure continues"),
+      b("Federal Reserve FOMC meeting on March 19 - consensus expects hold; watch for rate cut signals supportive of consumer spending"),
 
       // THESIS UPDATE
       h2("Thesis Update"),
@@ -95,13 +96,13 @@ const doc = new Document({
           new TableRow({children:[hc("Status",3360), hc("Change",3360), hc("Conviction",3360)]}),
           new TableRow({children:[
             dcb("7/8 Pillars On Track",3360,greenS),
-            dcl("No change. NU results reinforce fintech thesis.",3360),
-            dcb("4.25 / 5.0",3360)
+            dcl("No change post-Q4. AV & Delivery strengthened.",3360),
+            dcb("4.6 / 5.0",3360)
           ]}),
         ]
       }),
       p(""),
-      p("Nubank's strong Q4 results (ROE 29%, asset quality stable) validate the broader LATAM fintech opportunity and support our Fintech Scaling pillar. NU's off-platform credit growth parallels MELI's Mercado Credito trajectory. Margin Expansion remains the sole At Risk pillar — no change in assessment; requires Q1 2026 data to evaluate whether investment cycle moderates."),
+      p("Q4 results reinforced operational strength: GBs +22%, Delivery revenue +30%, Delivery EBITDA margin expanded to 4.0%, and MAPCs reached 202M. The sole At Risk pillar remains Near-Term Margins given Q1 EBITDA guidance below Street. We increased conviction to 4.6/5.0 (from 4.5) based on AV platform momentum (15-city target, Waabi exclusivity), Uber One reaching 46M subscribers, and record $1.9B Q4 buyback."),
 
       // ACTION
       h2("Action"),
@@ -111,10 +112,10 @@ const doc = new Document({
         rows:[
           new TableRow({children:[new TableCell({borders,width:{size:10080,type:WidthType.DXA},shading:{fill:"E3F2FD",type:ShadingType.CLEAR},margins:{top:120,bottom:120,left:200,right:200},children:[
             new Paragraph({children:[
-              new TextRun({text:"RECOMMENDATION: ACCUMULATE",font:"Arial",size:24,bold:true,color:"1565C0"}),
+              new TextRun({text:"RECOMMENDATION: ACCUMULATE ON WEAKNESS",font:"Arial",size:24,bold:true,color:"1565C0"}),
             ]}),
             new Paragraph({spacing:{before:80},children:[
-              new TextRun({text:"We continue to recommend accumulating MELI on post-earnings weakness. At $1,794 (+2.8% bounce), the stock remains ~7% below pre-earnings levels, offering an attractive entry at ~25x 2026E EPS. The partial recovery confirms buy-the-dip interest from institutional accounts. Near-term focus shifts to Brazil Q4 GDP (Mar 4), SE Q4 results (Mar 4 — Shopee competitive read), and Copom (Mar 18). Reiterate BUY with $2,220 target (+23.7% upside).",font:"Arial",size:20}),
+              new TextRun({text:"We recommend accumulating UBER on post-earnings weakness. At $74.80, the stock trades at ~22.7x 2026E adjusted EPS ($3.30), attractive for a platform growing Gross Bookings 20%+ with improving unit economics. The -6.4% weekly decline was driven by near-term margin concerns, not fundamental deterioration. Our updated target of $109 implies +45.7% upside. Key near-term catalysts: FOMC March 19, AV city expansion (Q2), and Q1 2026 earnings (~May 7). Reiterate BUY.",font:"Arial",size:20}),
             ]}),
           ]})]}),
         ]
@@ -127,16 +128,17 @@ const doc = new Document({
         columnWidths:[2520,5040,2520],
         rows:[
           new TableRow({children:[hc("Date",2520), hc("Event",5040), hc("Impact",2520)]}),
-          new TableRow({children:[dcl("Mar 4",2520),dcl("Brazil Q4 2025 GDP Release — consensus +1.6-1.8% QoQ",5040),dc("Medium",2520)]}),
-          new TableRow({children:[dcl("Mar 4",2520,altS),dcl("Sea Limited (SE) Q4 2024 Results — Shopee Brazil GMV commentary",5040,altS),dc("Medium",2520,altS)]}),
-          new TableRow({children:[dcl("Mar 18",2520),dcl("Brazil Copom Meeting (Selic) — Expected hold at 15.0%",5040),dc("Medium",2520)]}),
-          new TableRow({children:[dcl("Mar 27",2520,altS),dcl("Mexico Banxico Rate Decision — Expected hold at 9.5%",5040,altS),dc("Medium",2520,altS)]}),
-          new TableRow({children:[dcl("May 7",2520),dcl("MELI Q1 2026 Earnings — Key: margin trajectory & credit quality",5040),dc("High",2520,redS)]}),
+          new TableRow({children:[dcl("Mar 19",2520),dcl("Federal Reserve FOMC Meeting - Rate decision impacts consumer spending",5040),dc("Medium",2520)]}),
+          new TableRow({children:[dcl("Q2 2026",2520,altS),dcl("AV City Expansion Updates - Progress toward 15-city target",5040,altS),dc("High",2520,redS)]}),
+          new TableRow({children:[dcl("May 7 (Est.)",2520),dcl("UBER Q1 2026 Earnings - Key: EBITDA vs guide, margin trajectory",5040),dc("High",2520,redS)]}),
+          new TableRow({children:[dcl("May 8 (Est.)",2520,altS),dcl("Lyft Q1 2026 Earnings - U.S. ride-hailing competitive dynamics",5040,altS),dc("Medium",2520,altS)]}),
+          new TableRow({children:[dcl("H1 2026",2520),dcl("Waymo-Uber SF Launch - Major AV catalyst if timeline holds",5040),dc("High",2520,redS)]}),
+          new TableRow({children:[dcl("H1 2026",2520,altS),dcl("EU Platform Workers Directive Transposition - Regulatory headwind",5040,altS),dc("High",2520,redS)]}),
         ]
       }),
 
       p(""),
-      p("Near-term catalyst density increases next week: Brazil GDP and SE results on Mar 4 will provide macro and competitive read-throughs. Copom on Mar 18 will signal Selic trajectory — any dovish pivot would be a meaningful positive for MELI's credit portfolio and consumer spending."),
+      p("Near-term focus is on March FOMC (dovish signals supportive for consumer discretionary) and Q2 AV expansion updates. Q1 2026 earnings (~May 7) will be critical to assess margin investment trajectory."),
 
       p(""),
       p("This note is for informational purposes only. Not investment advice.", {italics:true, color:"888888", size:16}),
