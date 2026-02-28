@@ -21,10 +21,11 @@ Before proceeding, you must ensure you have the `TICKER` symbol (e.g., UBER, MEL
 2. **Handle Output:** Wait for the bash script to finish completely. The script may take a few minutes to complete all parallel tasks. It will list the generated files at the end.
 
 3. **Review Results:** Use your file reading tools to look at the generated files in the `coverage/{TICKER}/` directory. Look specifically at:
+   - `coverage/{TICKER}/summary-card.html` (This is a mobile-friendly HTML summary designed for the user)
    - `coverage/{TICKER}/05-initiation-report/initiation-{TICKER}-*.docx` (Read the executive summary text to understand the thesis)
    - `coverage/{TICKER}/04-financial-model/3-statements.xlsx` (Look at the generated numbers)
 
-4. **Final Response:** Tell the user the analysis is complete. Mention the exact location of the `coverage/{TICKER}` folder so they know where to find the generated files. Highlight 2-3 key insights or text from the reports to prove the job was completed successfully.
+4. **Final Response:** Tell the user the analysis is complete. You **MUST** provide the absolute path to the generated `coverage/{TICKER}/summary-card.html` file and strongly encourage the user to open it in their browser or share it via WhatsApp/Telegram to see the summarized results. Highlight 2-3 key insights or text from the reports to prove the job was completed successfully.
 
 ## Troubleshooting
 - **Missing Inputs:** If the script fails complaining about the `TICKER`, ensure you passed it correctly.
